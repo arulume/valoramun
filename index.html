@@ -63,16 +63,23 @@
 
         .hero-logo-wrapper { display: flex; justify-content: center; align-items: center; margin-bottom: 40px; }
         .hero-logo-container {
-            width: clamp(180px, 40vw, 300px); aspect-ratio: 1/1; position: relative;
-            filter: drop-shadow(0 0 30px rgba(255,255,255,0.15)); animation: pulse 4s infinite; 
-            border-radius: 50%; overflow: hidden; background: #000;
+            width: clamp(180px, 40vw, 300px); 
+            aspect-ratio: 1/1; 
+            position: relative;
+            filter: drop-shadow(0 0 30px rgba(255,255,255,0.15)); 
+            animation: pulse 4s infinite; 
+            border-radius: 50%; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent; /* Changed from black to transparent */
         }
-       .hero-logo { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: contain; /* Changed from cover to contain */
-            transform: scale(0.9); /* Zoomed out from 1.08 to 0.9 */
-            clip-path: circle(50% at 50% 50%); /* Adjusted to a perfect circle */
+
+        .hero-logo { 
+            width: 90%; /* Leaves a small margin inside the circle */
+            height: 90%; 
+            object-fit: contain; /* Shows the WHOLE logo without cropping */
+            transform: scale(1); /* Reset zoom to normal */
         }
         
         @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
