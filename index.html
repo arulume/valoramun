@@ -61,18 +61,31 @@
             to { opacity: 1; transform: translateY(0); filter: blur(0); }
         }
 
-        .hero-logo-wrapper { display: flex; justify-content: center; align-items: center; margin-bottom: 40px; }
+        .hero-logo-wrapper { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            margin-bottom: 40px; 
+        }
+
         .hero-logo-container {
-            width: clamp(180px, 40vw, 300px); 
+            width: clamp(200px, 45vw, 320px); 
             aspect-ratio: 1/1; 
             position: relative;
-            filter: drop-shadow(0 0 30px rgba(255,255,255,0.15)); 
+            filter: drop-shadow(0 0 40px rgba(255,255,255,0.2)); 
             animation: pulse 4s infinite; 
-            border-radius: 50%; 
             display: flex;
             justify-content: center;
             align-items: center;
-            background: transparent; /* Changed from black to transparent */
+            /* We removed the border-radius and background to let the logo's own circle shine */
+        }
+
+        .hero-logo { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: contain; 
+            /* Removed the clip-path so the Greek border is fully visible */
+            transform: scale(1.1); 
         }
 
         .hero-logo { 
